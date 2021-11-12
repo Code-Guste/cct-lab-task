@@ -1,0 +1,15 @@
+.items-container {
+  list-style-type: none;
+}
+
+.task-item {
+  max-width: 100%;
+  height: 85px;
+  -webkit-box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 11px 3px rgba(0, 0, 0, 0.1);
+}
+
+.list-item {
+  color: #0e2a35;
+  font-size: 18px;
+}
