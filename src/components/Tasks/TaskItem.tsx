@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./TaskItem.module.css";
 import { ReactComponent as Radio } from "../../assets/radio.svg";
 import { CSSTransition } from "react-transition-group";
@@ -10,13 +10,10 @@ const TaskItem: React.FC<{
   onToggle: () => void;
   active: boolean;
 }> = (props) => {
+  const nodeRef = React.useRef(null);
+
   return (
-    <li
-      className={`${classes["items-container"]} ${
-        props.active ? `${classes.active}` : ""
-      }`}
-      onClick={props.onToggle}
-    >
+    <li className={classes["items-container"]} onClick={props.onToggle}>
       <div
         className={`${classes["task-item"]} ${
           props.active ? `${classes.active}` : ""
@@ -26,6 +23,7 @@ const TaskItem: React.FC<{
         <h3 className={classes["task-title"]}>{props.title}</h3>
       </div>
       <CSSTransition
+        nodeRef={nodeRef}
         in={props.active}
         timeout={200}
         classNames={{
@@ -37,7 +35,7 @@ const TaskItem: React.FC<{
         mountOnEnter
         unmountOnExit
       >
-        <div className={classes["list-item"]}>
+        <div className={classes["list-item"]} ref={nodeRef}>
           {props.listItems.map((item, index) => (
             <p key={index}>
               <Radio /> <span>{item}</span>
