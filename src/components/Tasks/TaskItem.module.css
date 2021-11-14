@@ -38,6 +38,11 @@
   margin: 20px 0px 20px 0px;
 }
 
+.list-item p {
+  display: flex;
+  vertical-align: middle;
+}
+
 .list-item span {
   padding-left: 21px;
   font-family: "Roboto", sans-serif;
