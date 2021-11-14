@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@700&family=Roboto&display=swap");
+
 body {
-  margin: 0;
+  font-family: "Manrope", sans-serif;
+ 
+  margin: 40px 20px 0px 20px;
 }
 
 .container {
-  margin: 40px 20px 0px 20px;
+  margin: 0 auto;
+  max-width: 1360px;
 }
