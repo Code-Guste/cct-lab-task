@@ -19,6 +19,12 @@
   bottom: 0;
   width: 200px;
   border-bottom: 2px solid #00adaa;
+  transition: width 0.5s ease-in-out;
+}
+
+.task-item.active:before {
+  width: 300px;
+  transition: width 0.5s ease-in-out;
 }
 
 .task-title {
@@ -42,4 +48,19 @@
 .icon svg {
   padding-left: 30px;
   vertical-align: middle;
+}
+
+.alert-enter {
+  opacity: 0;
+}
+.alert-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
 }

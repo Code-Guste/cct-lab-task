@@ -15,6 +15,7 @@ const TaskItems = () => {
         "Implement functionality",
       ],
       icon: <NumberOne />,
+      id: "1",
     },
     {
       title: "Submit your test task",
@@ -23,23 +24,31 @@ const TaskItems = () => {
         "Send link with information to careers@cornercasetech.com",
       ],
       icon: <NumberTwo />,
+      id: "2",
     },
     {
       title: "Participate in tech interview",
       listItems: ["Talk with HR", "Talk with Tech team"],
       icon: <NumberThree />,
+      id: "3",
     },
     {
       title: "Receive answer",
       listItems: ["Receive answers", "Start your IT career"],
       icon: <NumberFour />,
+      id: "4",
     },
   ];
 
   return (
     <ul className={classes["task-items"]}>
-      {taskData.map(({ title, listItems, icon }) => (
-        <TaskItem title={title} listItems={listItems} icon={icon}></TaskItem>
+      {taskData.map(({ title, listItems, icon, id }) => (
+        <TaskItem
+          title={title}
+          listItems={listItems}
+          icon={icon}
+          key={id}
+        ></TaskItem>
       ))}
     </ul>
   );
