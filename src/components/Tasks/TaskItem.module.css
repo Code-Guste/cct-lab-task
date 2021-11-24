@@ -50,9 +50,19 @@
   font-size: 18px;
 }
 
-.icon svg {
-  padding-left: 30px;
-  vertical-align: middle;
+.list-item span a {
+  color: #00ADAA;
+  text-decoration: none;
+}
+
+.task-number {
+  width: 50px;
+  height: 54px;
+  background: linear-gradient(180deg, #00A9A7 0%, #00BA89 100%);
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+  margin-left: 30px;
 }
 
 .alert-enter {

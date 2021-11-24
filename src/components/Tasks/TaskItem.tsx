@@ -6,9 +6,9 @@ import { CSSTransition } from "react-transition-group";
 const TaskItem: React.FC<{
   title: string;
   listItems: string[];
-  icon: any;
   onToggle: () => void;
   active: boolean;
+  id: string;
 }> = (props) => {
   const nodeRef = React.useRef(null);
 
@@ -19,7 +19,7 @@ const TaskItem: React.FC<{
           props.active ? `${classes.active}` : ""
         }`}
       >
-        <div className={classes.icon}>{props.icon} </div>
+        <div className={classes["task-number"]}>{props.id}</div>
         <h3 className={classes["task-title"]}>{props.title}</h3>
       </div>
       <CSSTransition
@@ -38,7 +38,9 @@ const TaskItem: React.FC<{
         <div className={classes["list-item"]} ref={nodeRef}>
           {props.listItems.map((item, index) => (
             <p key={index}>
-              <Radio /> <span>{item}</span>
+              <Radio /> <span dangerouslySetInnerHTML={{
+            __html: item
+          }}/> 
             </p>
           ))}
         </div>
