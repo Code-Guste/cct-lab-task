@@ -1,6 +1,5 @@
 .items-container {
   list-style-type: none;
-  cursor: pointer;
 }
 
 .task-item {
@@ -11,6 +10,7 @@
   align-items: center;
   margin-top: 20px;
   position: relative;
+  cursor: pointer;
 }
 
 .task-item:before {
@@ -41,6 +41,7 @@
 .list-item p {
   display: flex;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 .list-item span {
