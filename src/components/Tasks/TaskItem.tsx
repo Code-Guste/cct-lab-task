@@ -27,6 +27,7 @@ const TaskItem: React.FC<{
   return (
     <li className={classes["items-container"]}>
       <div
+        role="button"
         onClick={props.onToggle}
         className={`${classes["task-item"]} ${
           props.active ? `${classes.active}` : ""
@@ -48,18 +49,18 @@ const TaskItem: React.FC<{
         mountOnEnter
         unmountOnExit
       >
-        <div className={classes["list-item"]} ref={nodeRef}>
+        <ul className={classes["list-items"]} ref={nodeRef}>
           {props.listItems.map((item, index) => (
-            <p key={index} onClick={() => toggleCheckbox(index)}>
+            <li className={classes["list-item"]} key={index} onClick={() => toggleCheckbox(index)}>
               {checkedState[index] === false ? <Unchecked /> : <Checked />}
               <span
                 dangerouslySetInnerHTML={{
                   __html: item,
                 }}
               />
-            </p>
+            </li>
           ))}
-        </div>
+        </ul>
       </CSSTransition>
     </li>
   );

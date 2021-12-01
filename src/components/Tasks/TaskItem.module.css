@@ -33,15 +33,15 @@
   color: #0e2a35;
 }
 
-.list-item {
+.list-items {
   padding-left: 40px;
-  margin: 20px 0px 20px 0px;
 }
 
-.list-item p {
+.list-item {
   display: flex;
   vertical-align: middle;
   cursor: pointer;
+  margin: 20px 0px 20px 0px;
 }
 
 .list-item span {
