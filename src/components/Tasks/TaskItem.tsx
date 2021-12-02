@@ -52,7 +52,7 @@ const TaskItem: React.FC<{
         <ul className={classes["list-items"]} ref={nodeRef}>
           {props.listItems.map((item, index) => (
             <li className={classes["list-item"]} key={index} onClick={() => toggleCheckbox(index)}>
-              {checkedState[index] === false ? <Unchecked /> : <Checked />}
+              {checkedState[index] === false ? <Unchecked className={classes.icon} /> : <Checked className={classes.icon} />}
               <span
                 dangerouslySetInnerHTML={{
                   __html: item,
